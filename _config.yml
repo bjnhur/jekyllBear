@@ -4,7 +4,7 @@
 title: DevBJ
 description: a personal blog
 # baseurl: "/jekyllBear" # the subpath of your site, e.g. /blog/
-url: "https://bjnhur.github.io/jekyllBear/" # the base hostname & protocol for your site
+url: "https://bjnhur.github.io/jekyll_bear_blog" # the base hostname & protocol for your site
 # host: 0.0.0.0
 
 
