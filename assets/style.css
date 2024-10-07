@@ -1,58 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Grandstander:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Open+Sans:wght@400;600&display=swap');
 
-/* 색상 팔레트 */
+/* 전체 스타일 설정 */
 :root {
-  --body-bg: #ffffff;
-  --body-color: #414141;
-  --heading-color: #313131;
-  --link-1: #186cb8;
+  --body-bg: #ffffff; /* 흰색 배경 */
+  --body-color: #333333;
+  --heading-color: #222222;
+  --link-color: #186cb8;
   --link-hover-color: #ffffff;
-  --hrline-color: #ccc;
-  --blockquote-bg: #f8f8f8;
-  --blockquote-border: #ddd;
-  --blockquote-color: #7a7a7a;
-  --pre-bg: #f8f8f8;
-  --pre-border: #dddddd;
-  --pre-code-color: #008000;
-  --button-border: #333;
-  --copyright-color: #888;
+  --hr-color: #dddddd;
+  --blockquote-border-color: #dddddd;
+  --blockquote-bg-color: #f9f9f9;
+  --blockquote-text-color: #666666;
+  --pre-bg-color: #f8f8f8;
+  --pre-border-color: #dddddd;
+  --pre-text-color: #008000;
+  --footer-bg-color: #ffffff; /* 흰색 배경 */
+  --footer-text-color: #999999;
 }
 
-/* 다크 모드 설정 */
-[data-theme="dark"] {
-  --body-bg: #000;
-  --body-color: #aaa;
-  --link-1: #2a9a9f;
-  --link-hover-color: #000;
-  --blockquote-bg: #1a1a1a;
-  --blockquote-border: #333;
-  --blockquote-color: #999;
-}
-
-/* 전체 레이아웃 스타일 */
-body, html {
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--body-bg); /* 흰색 배경 */
+  color: var(--body-color);
+  line-height: 1.8;
   margin: 0;
   padding: 0;
-  height: 100%;
-  background-color: var(--body-bg);
-  color: var(--body-color);
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  text-rendering: optimizeLegibility;
 }
 
 main {
   max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
 }
 
-h1, h2, h3, h4 {
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
+h1, h2, h3, h4, h5, h6 {
   color: var(--heading-color);
-  font-family: 'Grandstander', cursive;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
 }
 
 h1 {
@@ -76,89 +61,91 @@ p {
 }
 
 a {
-  color: var(--link-1);
+  color: var(--link-color);
   text-decoration: none;
-  border-bottom: 1px solid var(--link-1);
-  transition: all 0.3s ease;
+  border-bottom: 1px solid var(--link-color);
+  transition: background-color 0.3s ease;
 }
 
 a:hover {
-  background-color: var(--link-1);
+  background-color: var(--link-color);
   color: var(--link-hover-color);
-}
-
-/* 헤더 스타일 */
-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 40px;
-  border-bottom: 1px solid var(--hrline-color);
-}
-
-nav a {
-  font-family: 'Grandstander', cursive;
-  text-decoration: none;
-  color: var(--link-1);
-  margin-left: 15px;
-}
-
-nav a:hover {
-  color: var(--link-hover-color);
-  border-bottom: 2px solid var(--link-hover-color);
 }
 
 /* 블록 인용 스타일 */
 blockquote {
-  color: var(--blockquote-color);
-  border-left: 4px solid var(--blockquote-border);
-  padding-left: 1.5rem;
-  margin-left: 0;
-  background-color: var(--blockquote-bg);
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: var(--blockquote-bg-color);
+  border-left: 4px solid var(--blockquote-border-color);
+  color: var(--blockquote-text-color);
 }
 
-/* 코드 및 pre 스타일 */
+/* 코드 블록 스타일 */
 pre {
-  background-color: var(--pre-bg);
-  border: 1px solid var(--pre-border);
+  background-color: var(--pre-bg-color);
+  border: 1px solid var(--pre-border-color);
   padding: 1rem;
   overflow-x: auto;
-  font-family: 'DM Mono', monospace;
 }
 
 pre code {
-  color: var(--pre-code-color);
+  color: var(--pre-text-color);
+  font-family: 'DM Mono', monospace;
+}
+
+/* 헤더 스타일 */
+header {
+  text-align: center;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--hr-color);
+}
+
+nav a {
+  margin: 0 15px;
+  font-weight: 600;
+}
+
+nav a:hover {
+  border-bottom: 2px solid var(--link-color);
 }
 
 /* 푸터 스타일 */
 footer {
+  background-color: var(--footer-bg-color); /* 흰색 배경 */
   text-align: center;
-  padding: 20px 0;
+  padding: 1.5rem 0;
   font-size: 0.9rem;
-  color: var(--copyright-color);
-  border-top: 1px solid var(--hrline-color);
+  color: var(--footer-text-color);
+  border-top: 1px solid var(--hr-color);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--hr-color);
+  margin: 2rem 0;
 }
 
 /* 이미지 스타일 */
 img {
-  display: block;
-  border-radius: 3px;
-  margin: 1rem 0;
   max-width: 100%;
   height: auto;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  margin: 1rem 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
 /* 테이블 스타일 */
 table {
   width: 100%;
-  border: 1px solid var(--hrline-color);
   border-collapse: collapse;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-td, th {
-  border: 1px solid var(--hrline-color);
-  padding: 0.5rem;
+table th, table td {
+  border: 1px solid var(--hr-color);
+  padding: 0.75rem;
+  text-align: left;
 }
 
 tbody tr:nth-child(odd) {
