@@ -102,12 +102,30 @@ header {
 }
 
 nav a {
+  font-family: 'DM Mono', monospace;
+  text-decoration: none;
+  color: #333;
   margin: 0 15px;
-  font-weight: 600;
+  position: relative;
 }
 
-nav a:hover {
-  border-bottom: 2px solid var(--link-color);
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 2px;
+  background-color: #ff69b4; /* 밑줄 색 (핑크색) */
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 /* 푸터 스타일 */
