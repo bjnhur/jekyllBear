@@ -169,3 +169,35 @@ table th, table td {
 tbody tr:nth-child(odd) {
   background-color: #f9f9f9;
 }
+
+ul.posts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.posts-list li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+
+ul.posts-list li time {
+  font-style: italic;
+  color: #666;
+  margin-right: 20px; /* 날짜와 제목 사이 간격 */
+  flex-shrink: 0; /* 날짜가 줄어들지 않도록 고정 */
+}
+
+ul.posts-list li a {
+  color: #186cb8;
+  text-decoration: none;
+  border-bottom: 1px solid #186cb8;
+  transition: all 0.3s ease;
+}
+
+ul.posts-list li a:hover {
+  background-color: #186cb8;
+  color: #ffffff;
+}
