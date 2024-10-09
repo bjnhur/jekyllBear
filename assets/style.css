@@ -177,17 +177,17 @@ ul.posts-list {
 }
 
 ul.posts-list li {
-  display: flex;
-  justify-content: flex-start;
-  align-items: baseline;
+  display: grid;
+  grid-template-columns: 150px 1fr; /* 날짜는 고정 너비, 제목은 유동 너비 */
+  gap: 20px;
+  align-items: center;
   margin-bottom: 1rem;
 }
 
 ul.posts-list li time {
   font-style: italic;
   color: #666;
-  margin-right: 20px; /* 날짜와 제목 사이 간격 */
-  flex-shrink: 0; /* 날짜가 줄어들지 않도록 고정 */
+  white-space: nowrap; /* 날짜가 여러 줄로 분리되지 않도록 설정 */
 }
 
 ul.posts-list li a {
